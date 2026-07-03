@@ -1,0 +1,6 @@
+﻿interface:
+  display_name: "Pet Video Commerce Director"
+  short_description: "Pet product video prompts and bilingual ecommerce scripts."
+  default_prompt: "Use $pet-video-commerce-director to analyze my pet product images or video and generate short-video prompts, storyboards, and bilingual voiceover scripts."
+policy:
+  allow_implicit_invocation: true
