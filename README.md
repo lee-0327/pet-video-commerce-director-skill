@@ -1,47 +1,93 @@
 # Pet Video Commerce Director Skill
 
-This repository contains a Codex skill for pet product short-video ecommerce creation.
+这是一个用于宠物商品短视频带货创作的 Codex Skill。
 
-## What it does
+它的定位不是普通文案助手，而是一个“宠物商品 AI 视频导演 + 带货口播编导”。它可以根据宠物图片、商品图片、环境图片、视频或视频画面，生成适合短视频生产的提示词、分镜方案和中英文口播文案。
 
-`pet-video-commerce-director` turns pet product images, pet images, environment images, videos, or video frames into production-ready short-video materials, including:
+## 主要功能
 
-- Pet, product, and scene analysis
-- Short-video script direction selection
-- AI video generation prompts
-- 4-shot storyboards
-- Chinese and English voiceover scripts
-- English video prompts
-- Negative prompts for AI video generation
+- 分析宠物、商品、环境和画面氛围
+- 判断商品功能、卖点和适合的带货角度
+- 提供短视频脚本模板方向选择
+- 生成 AI 视频生成提示词
+- 生成 4 镜头分镜提示词
+- 生成中文和英文口播文案
+- 生成英文视频提示词
+- 生成负面提示词，减少 AI 视频生成时的变形和错误
 
-## Main use cases
+## 适用场景
 
-- Pet product TikTok / Douyin / Xiaohongshu video planning
-- TikTok Shop and Shopee pet product scripts
-- Image-to-video prompt writing for pet products
-- Pet ecommerce voiceover script generation
-- Viral pet product video logic adaptation
+- 宠物商品 TikTok / 抖音 / 小红书短视频
+- TikTok Shop / Shopee 宠物商品带货脚本
+- 宠物商品图生视频提示词
+- 宠物短视频口播文案
+- 爆款宠物商品视频逻辑复刻和改写
 
-## Workflow
+## 基础工作流
 
-For image materials, the skill first analyzes the pet, product, scene, and selling points. It then presents script directions in a table and waits for the user to choose a template before generating the full prompt package.
+### 图片素材
 
-For video materials, the skill analyzes the existing footage, product function, pet reaction, and selling angle. It then asks the user to choose a script direction before producing bilingual voiceovers, subtitles, and shot-matching suggestions.
+当用户上传宠物图、商品图、环境图时，Skill 会先分析：
 
-## Script templates
+- 宠物种类和特征
+- 商品类型和外观
+- 商品核心卖点
+- 环境特点
+- 推荐视频风格
 
-The skill currently supports:
+然后用表格形式展示多个脚本方向，让用户选择模板。用户选定后，再生成完整内容：
 
-- Template 1: Pain-point hook
-- Template 2: Story-led recommendation
-- Template 3: Checklist / tips style
-- Template 4: Counterintuitive opening
-- Template 5: Viral function demo
-- Template 6: Real-person test and breakdown
+- 带货角度
+- 视频生成提示词
+- 4 镜头分镜提示词
+- 中英文口播
+- 英文视频提示词
+- 负面提示词
 
-Different templates must change not only the voiceover, but also the storyboard structure, opening shot, visual proof, and shot order.
+### 视频素材
 
-## Safety rules
+当用户上传视频或视频画面时，Skill 会先分析：
 
-The skill avoids unsafe pet behavior, exaggerated claims, medical promises, front-facing human faces, identifiable full-body human shots, watermarks, and distorted product or pet visuals.
+- 视频里的宠物
+- 宠物动作和情绪
+- 商品展示方式
+- 环境和视频风格
+- 产品功能与卖点
+- 适合的带货脚本方向
+
+用户选定方向后，再生成中英文口播、字幕拆分和画面匹配建议。
+
+## 脚本模板
+
+当前支持 6 种脚本逻辑：
+
+| 模板 | 用途 |
+|---|---|
+| 模板1：痛点引入型 | 适合从养宠痛点切入的产品 |
+| 模板2：故事带入型 | 适合真实经历和生活化分享 |
+| 模板3：分享清单型 | 适合干货、技巧、清单类内容 |
+| 模板4：反常识开场型 | 适合用反差和打破认知吸引停留 |
+| 模板5：爆款功能演示型 | 适合能通过动作演示证明卖点的产品 |
+| 模板6：真人实测拆解型 | 适合宠物穿戴、外出、背包、牵引类产品 |
+
+不同模板不仅会改变口播结构，也必须改变视频分镜结构、开头方式、镜头顺序和视觉证明方式。
+
+## 重要规则
+
+- 分镜固定为 4 个镜头，总时长 15-20 秒
+- 每个分镜都要强调：不要配乐、不要字幕、不要配音、不要旁白文字、不要水印，只生成纯画面
+- 如果用户提供独立参考图，提到宠物加“（图1）”，提到商品加“（图2）”，提到环境加“（图3）”
+- 中英文口播里不保留“（图1）（图2）（图3）”，保证听起来像真人说话
+- 可以出现人手、局部身体、背影或侧后方，但不能出现人的正面照和清晰人脸
+- 避免医疗功效承诺、夸大宣传、绝对化营销词和危险互动
+
+## 口播风格
+
+口播默认会做去 AI 味处理：
+
+- 中文像真实博主分享，不像官方广告
+- 英文自然简短，适合 TikTok 和海外短视频平台
+- 不堆砌形容词
+- 不使用“全网第一”“百分百有效”“必买神器”等绝对化表达
+- 英文口播尽量控制在正常语速 15 秒以内
 
